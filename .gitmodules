@@ -1,0 +1,3 @@
+[submodule "third-party/pq"]
+	path = third-party/pq
+	url = https://github.com/postgres/postgres.git
