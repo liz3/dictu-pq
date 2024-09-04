@@ -13,3 +13,6 @@ else()
                                           "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/lib/libpgcommon.a"
                                           "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/lib/libpgcommon_shlib.a")
 endif()
+if(UNIX AND NOT APPLE)
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+endif()
