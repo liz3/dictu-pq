@@ -7,12 +7,11 @@ add_library(dictu-pg SHARED src/dictu-pg.c)
 target_include_directories(dictu-pg PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third-party/dictu/")
 target_include_directories(dictu-pg PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/include")
 if(WIN32)
-else()
+elseif(APPLE)
   target_link_libraries(dictu-pg PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/lib/libpq.a"
                                           "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/lib/libpgport.a"
                                           "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/lib/libpgcommon.a"
                                           "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/lib/libpgcommon_shlib.a")
-endif()
-if(UNIX AND NOT APPLE)
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+else()
+    target_link_libraries(dictu-pg PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/lib/libpq.so")
 endif()
