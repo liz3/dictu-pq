@@ -126,7 +126,7 @@ static Value dictuPqClientExecute(DictuVM *vm, int argCount, Value *args) {
     char **values = malloc(sizeof(char *) * nParams);
     for (size_t i = 0; i < nParams; i++)
       values[i] = valueToString(params->values.values[i]);
-    res = PQexecParams(client->conn, query_string->chars, nParams, NULL, values,
+    res = PQexecParams(client->conn, query_string->chars, nParams, NULL, (const char *const *)values,
                        NULL, NULL, 1);
     for (size_t i = 0; i < nParams; i++)
       free(values[i]);
