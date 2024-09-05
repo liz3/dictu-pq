@@ -7,6 +7,7 @@ add_library(dictu-pg SHARED src/dictu-pg.c)
 target_include_directories(dictu-pg PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third-party/dictu/")
 target_include_directories(dictu-pg PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/include")
 if(WIN32)
+  configure_file("${CMAKE_CURRENT_SOURCE_DIR}/scripts/buildenv.pl" "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/src/tools/msvc/buildenv.pl" COPYONLY)
       target_link_libraries(dictu-pg PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/lib/libpq.lib")
 elseif(APPLE)
   target_link_libraries(dictu-pg PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third-party/pq/build/lib/libpq.a"
