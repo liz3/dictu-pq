@@ -1,7 +1,11 @@
 #include "dictu-pg.h"
 #include "dictu-include.h"
 #include "libpq-fe.h"
+#ifdef _WIN32
+#include "server/catalog/pg_type_d.h"
+#else
 #include "postgresql/server/catalog/pg_type_d.h"
+#endif
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>

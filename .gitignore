@@ -2,3 +2,4 @@
 build
 .DS_Store
 third-party/pq/build
+third-party/pq/Release

@@ -27,10 +27,13 @@ coverage/
 coverage-html-stamp
 *.vcproj
 *.vcxproj
+*.vcxproj.user
 win32ver.rc
 *.exe
 lib*dll.def
 lib*.pc
+.cache
+/.vs/
 
 # Local excludes in root directory
 /GNUmakefile
@@ -41,5 +44,6 @@ lib*.pc
 /pgsql.sln.cache
 /Debug/
 /Release/
+/build/
 /tmp_install/
 /portlock/
