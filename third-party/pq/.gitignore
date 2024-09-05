@@ -28,7 +28,6 @@ coverage-html-stamp
 *.vcproj
 *.vcxproj
 *.vcxproj.user
-win32ver.rc
 *.exe
 lib*dll.def
 lib*.pc
