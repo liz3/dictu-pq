@@ -22,7 +22,11 @@ make -j && make install
 **Note: If you Cygwin installation is NOT `c:\cygwin64` then update `third-party\pq\src\tools\msvc\buildenv.pl`**  
 **Note: Make sure there are no cygwin or msys compilers in your path, so to use the MSVC Compiler**
 ```sh
-cd third-party\pq\src\tools\msvc
+cd <repository root>
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+cd <repository-root>\third-party\pq\src\tools\msvc
 .\build.bat
 cd third-party\pq
 .\src\tools\msvc\install.bat .\build
@@ -40,12 +44,10 @@ make -j
 ### Windows
 ```sh
 cd <repository root>
-mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
 cmake --build . --config Release
 ```
-**Note: On windows you need to copy the DLL`s from `third-party\pg\build\lib` into `build\Release` for the mod to work.**
+**Note: On windows after building you need to copy the DLL`s from `third-party\pg\build\lib` into `build\Release` for the mod to work.**
 
 # Usage
 `from "mod.du" import pg;`
