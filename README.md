@@ -7,6 +7,8 @@ Clone the repository:
 git clone --recurse-submodules https://github.com/liz3/dictu-pg.git
 ```
 
+**Note that at the moment you need a dictu version from my fork(develop branch) as it contains needed patches not currently merged upstream!**
+
 ## Prerequisites For Windows
 * [ActiveState Perl distribution](https://platform.activestate.com/ActiveState-Projects/ActiveState-Perl-5.36.0)
 * [bison.exe and flex.exe from Cygwin](https://www.cygwin.com/install.html)
