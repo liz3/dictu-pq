@@ -1,0 +1,16 @@
+import System;
+import Process;
+
+if (System.platform != "windows") {
+    Process.run(["./scripts/unix_build.sh"], true).match(
+    def (result) => {
+    },
+    def (error) => {
+      printError(error);
+      System.exit(1);
+    }
+  );
+} else {
+      printError("Windows is todo");
+      System.exit(1);
+}
