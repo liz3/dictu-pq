@@ -2,5 +2,5 @@
   "deps": {},
   "name": "dictu-pq",
   "version": "0.0.1",
-  "postinstall": "dictu scripts/install.du"
+  "build-cmd": "dictu scripts/install.du"
 }
